@@ -1,0 +1,34 @@
+[
+    {
+        "First Name": "Amelia",
+        "Last Name": "Roberts",
+        "Email": "amelia@email.com",
+        "Position": "Web Developer",
+        "Gender": "female",
+        "id": 1
+    },
+    {
+        "First Name": "John",
+        "Last Name": "Smith",
+        "Email": "john@email.com",
+        "Position": "Sales Manager",
+        "Gender": "male",
+        "id": 2
+    },
+    {
+        "First Name": "Katy",
+        "Last Name": "Smith",
+        "Email": "katy@email.com",
+        "Position": "Education Administrator",
+        "Gender": "female",
+        "id": 3
+    },
+    {
+        "First Name": "Pete",
+        "Last Name": "Wood",
+        "Email": "pete@email.com",
+        "Position": "Creative Designer",
+        "Gender": "male",
+        "id": 4
+    }
+]
