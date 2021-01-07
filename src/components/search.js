@@ -1,16 +1,31 @@
-import React from "react";
-import { Form, Button } from 'react-bootstrap';
+import React, { Component } from "react";
+import { Form } from 'react-bootstrap';
 
-function SearchForm(props) {
-    return (
-        <Form>
-            <Form.Group controlId="exampleForm.ControlInput1">
-                <Form.Label>Search Employee</Form.Label>
-                <Form.Control type="input" placeholder="search here" />
-            </Form.Group>
-            <Button onClick={props.handleFormSubmit} variant="primary">Primary</Button>{' '}
-        </Form>
-    );
+
+
+class SearchForm extends Component {
+    constructor(props) {
+        super(props)
+    }
+    render() {
+        return (
+            <Form>
+                <Form.Group>
+
+                    <Form.Label htmlFor="search">Search:</Form.Label>
+                    <Form.Input
+                        onChange={this.props.handleInputChange}
+                        value={this.props.value}
+                        name="search"
+                        type="text"
+                        className="form-control"
+                        placeholder="Search for an Employee"
+                        id="search"
+                    />
+                </Form.Group>
+            </Form>
+        );
+    }
 }
 
 export default SearchForm;
