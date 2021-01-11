@@ -16,10 +16,10 @@ class App extends Component {
     }
   }
   componentDidMount() {
-    API.search().then((response) => { this.setState({ employees: response.data.results }) })
+    API.Search().then((response) => { this.setState({ employees: response.data.results }) })
   }
   searchEmployees = query => {
-    API.search(query)
+    API.Search(query)
       .then(res => this.setState({ result: res.data }))
       .catch(err => console.log(err));
   };
