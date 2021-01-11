@@ -1,32 +1,30 @@
-import React, { Component } from "react";
-import { Form } from 'react-bootstrap';
+import React from "react";
+import { Form, Button } from 'react-bootstrap';
 
-
-
-class SearchForm extends Component {
-    constructor(props) {
-        super(props)
-    }
-    render() {
-        return (
-            <Form>
-                <Form.Group>
-
-                    <Form.Label htmlFor="search">Search:</Form.Label>
-                    <Form.Input
-                        onChange={this.props.handleInputChange}
-                        value={this.props.value}
-                        name="search"
-                        type="text"
-                        className="form-control"
-                        placeholder="Search for an Employee"
-                        id="search"
-                    />
-                </Form.Group>
-            </Form>
-        );
-    }
+function SearchForm(props) {
+    return (
+        <Form>
+            <div className="form-group" style={{ display: 'flex' }}>
+                <label htmlFor="search"></label>
+                <input
+                    onChange={props.handleInputChange}
+                    value={props.value}
+                    name="search"
+                    type="text"
+                    className="form-control"
+                    placeholder="Search Employee"
+                    id="search"
+                />
+                <Button onClick={props.handleFormSubmit} className="btn btn-primary">
+                    Search
+                    </Button>
+                <Button onClick={props.refreshPage} className="btn btn-primary ml-1">
+                    Reset
+                    </Button>
+                {/* <br /> */}
+            </div>
+        </Form>
+    )
 }
 
 export default SearchForm;
-

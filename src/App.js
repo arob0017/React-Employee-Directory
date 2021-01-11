@@ -1,11 +1,10 @@
-import logo from './logo.svg';
 import './App.css';
 import React, { Component } from 'react';
 import API from './utils/API';
 import EmpTable from './components/emptable';
 import Header from './components/header';
 import Footer from './components/footer';
-import SearchForm from './components/search'
+import SearchForm from './components/search.js';
 
 
 class App extends Component {
@@ -35,6 +34,10 @@ class App extends Component {
     event.preventDefault();
     this.searchEmployees(this.state.search);
   };
+  refreshPage = event => {
+    event.preventDefault();
+    window.location.reload();
+  }
   render() {
     return (
       <div className="App" >
