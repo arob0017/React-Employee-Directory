@@ -18,11 +18,6 @@ class App extends Component {
   componentDidMount() {
     API.Search().then((response) => { this.setState({ employees: response.data.results }) })
   }
-  searchEmployees = query => {
-    API.Search(query)
-      .then(res => this.setState({ result: res.data }))
-      .catch(err => console.log(err));
-  };
   handleInputChange = event => {
     const value = event.target.value;
     const name = event.target.name;
@@ -30,14 +25,11 @@ class App extends Component {
       [name]: value
     });
   };
-  handleFormSubmit = event => {
-    event.preventDefault();
-    this.searchEmployees(this.state.search);
-  };
-  refreshPage = event => {
-    event.preventDefault();
-    window.location.reload();
-  }
+
+  // refreshPage = event => {
+  //   event.preventDefault();
+  //   window.location.reload();
+  // }
   render() {
     return (
       <div className="App" >
@@ -47,11 +39,15 @@ class App extends Component {
           handleInputChange={this.handleInputChange}
           handleFormSubmit={this.handleFormSubmit}
         />
-        <EmpTable employees={this.state.employees} />
+        <EmpTable
+          employees={this.state.employees.filter(employee => employee.name.last.toLowerCase().includes(this.state.search.toLowerCase()))}
+        // refreshPage={this.refreshPage}
+        />
         <Footer />
       </div>
     );
   }
 }
+
 
 export default App;

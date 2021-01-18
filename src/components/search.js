@@ -1,5 +1,5 @@
 import React from "react";
-import { Form, Button } from 'react-bootstrap';
+import { Form } from 'react-bootstrap';
 
 function SearchForm(props) {
     return (
@@ -12,16 +12,10 @@ function SearchForm(props) {
                     name="search"
                     type="text"
                     className="form-control"
-                    placeholder="Search Employee"
+                    placeholder="Search Employee by Sirname"
                     id="search"
                 />
-                <Button onClick={props.handleFormSubmit} className="btn btn-primary">
-                    Search
-                    </Button>
-                <Button onClick={props.refreshPage} className="btn btn-primary ml-1">
-                    Reset
-                    </Button>
-                {/* <br /> */}
+                {/* <Button onClick={props.refreshPage}>Refresh Page</Button> */}
             </div>
         </Form>
     )

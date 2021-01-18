@@ -16,8 +16,8 @@ function EmpTable(props) {
                 </thead>
                 <tbody>
                     {props.employees.map(employee => (
-                        <tr>
-                            <img alt={employee.name.first} src={employee.picture.thumbnail} />
+                        <tr key={employee.id.value}>
+                            <td><img alt={employee.name.first} src={employee.picture.thumbnail} /></td>
                             <td>{employee.name.first}</td>
                             <td>{employee.name.last}</td>
                             <td>{employee.email}</td>
